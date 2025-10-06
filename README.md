@@ -7,9 +7,15 @@ It provides a lightweight UI for adding subjects, tracking attended/total hours,
 
 Show us some love by starring the repository on GitHub and connecting with us on LinkedIn!
 
-- **Abhinaya Gowda**: [GitHub](https://github.com/AbhinayaGowda) | [LinkedIn](https://linkedin.com/in/abhinaya-gowda)
-- **Samarth Kale**: [GitHub](https://github.com/SamarthKale) | [LinkedIn](https://linkedin.com/in/samarth-n-kale)
-- 
+**Abhinaya Gowda**
+
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/AbhinayaGowda)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/abhinaya-gowda)
+
+**Samarth Kale**
+
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/SamarthKale)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/samarth-n-kale)
 ## 📦 Download
 
 You can download the latest **Windows EXE installer** from Google Drive:
