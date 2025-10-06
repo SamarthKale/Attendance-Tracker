@@ -1,4 +1,4 @@
-## 📝 Introduction
+# 📝 Attendance Tracker
 **Attendance App** is a simple cross-platform desktop attendance tracker built with **Electron**.  
 It provides a lightweight UI for adding subjects, tracking attended/total hours, and saving per-user CSV data to a local folder.
 
@@ -23,6 +23,8 @@ You can download the latest **Windows EXE installer** from Google Drive:
 🔗 **[Download Attendance App (Google Drive)](https://drive.google.com/drive/folders/19NKG79RGutCyJBh1Ta5asYE2D4QF5u-2?usp=sharing)**  
 
 [![Download EXE](https://img.shields.io/badge/Download-Windows%20EXE-blue?style=for-the-badge&logo=windows)](https://drive.google.com/drive/folders/19NKG79RGutCyJBh1Ta5asYE2D4QF5u-2?usp=sharing)
+### Note
+Mobile Version in Development
 
 ---
 
