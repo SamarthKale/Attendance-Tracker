@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Attendance Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Attendance Tracker</h1>
+        <div id="student-info-display" class="student-info-card">
+            <button id="logout-btn" class="logout-button">Logout</button>
+        </div>
+
+        <!-- Overall Summary -->
+        <div id="summary" class="summary-card">
+            <div class="summary-header">
+                <button id="prev-month-btn">&lt;</button>
+                <h2 id="month-display">Current Month</h2>
+                <button id="next-month-btn">&gt;</button>
+            </div>
+            <div class="progress-container">
+                <div class="progress-bar-container">
+                    <div id="overall-progress-bar" class="progress-bar"></div>
+                </div>
+                <span id="overall-percentage">0%</span>
+            </div>
+            <p id="overall-hours">Hours: 0 / 0</p>
+            <p class="goal-text">Goal: 75%</p>
+        </div>
+
+        <!-- Add Subject Form -->
+        <div class="card">
+            <h2>Add New Subject</h2>
+            <form id="add-subject-form">
+                <input type="text" id="subject-name" placeholder="Enter subject name" required>
+                <button type="submit">Add Subject</button>
+            </form>
+        </div>
+
+        <!-- Subjects List -->
+        <h2>Subjects</h2>
+        <div id="subjects-container">
+            <!-- Subject cards will be dynamically inserted here -->
+        </div>
+
+    </div>
+
+    <!-- Edit Modal -->
+    <div id="edit-modal" class="modal-backdrop hidden">
+        <div class="modal-content">
+            <h2>Edit Attendance</h2>
+            <p>Editing for <strong id="edit-subject-name"></strong></p>
+            <form id="edit-form">
+                <div class="form-group">
+                    <label for="attended-hours">Attended Hours</label>
+                    <input type="number" id="attended-hours" min="0" required>
+                </div>
+                <div class="form-group">
+                    <label for="total-hours">Total Hours</label>
+                    <input type="number" id="total-hours" min="0" required>
+                </div>
+                <div class="modal-actions">
+                    <button type="submit">Save Changes</button>
+                    <button type="button" id="cancel-edit">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="./renderer.js"></script>
+
+    <!-- Credits Section -->
+    <div class="credits-section">
+        <p>Developed by:</p>
+        <p>
+            <strong>Abhinaya Gowda</strong>
+            (<a href="https://github.com/AbhinayaGowda" target="_blank">GitHub</a> |
+            <a href="https://linkedin.com/in/abhinaya-gowda" target="_blank">LinkedIn</a>)
+        </p>
+        <p>
+            <strong>Samarth Kale</strong>
+            (<a href="https://github.com/SamarthKale" target="_blank">GitHub</a> |
+            <a href="https://linkedin.com/in/samarth-kale" target="_blank">LinkedIn</a>)
+        </p>
+        <p class="demo-message">Show us some love by starring the repo on GitHub! and Follow us on LinkedIn!</p>
+    </div>
+
+    <!-- Onboarding Tour -->
+    <div id="onboarding-backdrop" class="modal-backdrop hidden">
+        <div id="onboarding-popover" class="onboarding-popover">
+            <div id="onboarding-content">
+                <h3 id="onboarding-title"></h3>
+                <p id="onboarding-text"></p>
+            </div>
+            <div class="onboarding-actions">
+                <button id="onboarding-prev">Previous</button>
+                <button id="onboarding-next">Next</button>
+                <button id="onboarding-finish">Finish</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

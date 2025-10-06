@@ -1,0 +1,429 @@
+:root {
+    --primary-color: #4a69bd;
+    --primary-hover-color: #6082d4;
+    --success-color: #1dd1a1;
+    --danger-color: #ff6b6b;
+    --light-gray: #f5f6fa;
+    --medium-gray: #dcdde1;
+    --dark-gray: #576574;
+    --text-color: #2f3542;
+    --card-bg: #ffffff;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--light-gray);
+    margin: 0;
+    padding: 20px;
+    color: var(--text-color);
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h1, h2 {
+    color: var(--dark-gray);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.card, .summary-card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px var(--shadow-color);
+    transition: all 0.3s ease;
+}
+
+.card:hover, .summary-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+.summary-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.summary-header h2 {
+    margin: 0;
+    border-bottom: none;
+}
+
+.summary-header button {
+    background: none;
+    border: 1px solid var(--medium-gray);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    font-size: 18px;
+    color: var(--dark-gray);
+    transition: background-color 0.2s ease;
+}
+
+.summary-header button:hover {
+    background-color: var(--medium-gray);
+}
+
+#add-subject-form {
+    display: flex;
+    gap: 10px;
+}
+
+#add-subject-form input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid var(--medium-gray);
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+#add-subject-form button {
+    padding: 10px 20px;
+    border: none;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+#add-subject-form button:hover {
+    background-color: var(--primary-hover-color);
+}
+
+.subject-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.subject-card-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.subject-card-actions button {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border: 1px solid var(--medium-gray);
+    background-color: var(--card-bg);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.subject-card-actions button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+.subject-card-actions button.attended {
+    color: var(--success-color);
+    border-color: var(--success-color);
+}
+
+.subject-card-actions button.absent {
+    color: var(--danger-color);
+    border-color: var(--danger-color);
+}
+
+.subject-card-actions button.delete {
+    color: var(--dark-gray);
+    border-color: var(--medium-gray);
+}
+
+.progress-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 5px;
+}
+
+.progress-bar-container {
+    flex-grow: 1;
+    height: 12px;
+    background-color: var(--medium-gray);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0; /* Set by JS */
+    border-radius: 6px;
+    transition: width 0.4s ease, background-color 0.4s ease;
+}
+
+.progress-bar.high {
+    background-color: var(--success-color);
+}
+
+.progress-bar.low {
+    background-color: var(--danger-color);
+}
+
+.hours-text, .goal-text {
+    margin: 0;
+    font-size: 14px;
+    color: var(--dark-gray);
+}
+
+.goal-text {
+    font-style: italic;
+    font-size: 12px;
+}
+
+/* Modal Styles */
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-backdrop.hidden {
+    display: none;
+}
+
+.modal-content {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    width: 90%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+    border-bottom: none;
+    color: var(--primary-color);
+    font-size: 24px;
+    text-align: center;
+}
+
+.modal-content p {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--dark-gray);
+}
+
+.form-group input {
+    width: calc(100% - 16px); /* Account for padding */
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid var(--medium-gray);
+    font-size: 16px;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.modal-actions button {
+    padding: 10px 20px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.modal-actions button[type="submit"] {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.modal-actions button[type="submit"]:hover {
+    background-color: var(--primary-hover-color);
+}
+
+.modal-actions button[type="button"] {
+    background-color: var(--medium-gray);
+    color: var(--text-color);
+}
+
+.modal-actions button[type="button"]:hover {
+    background-color: var(--dark-gray);
+    color: white;
+}
+/* Onboarding Styles */
+.onboarding-popover {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    padding: 25px;
+    width: 90%;
+    max-width: 350px;
+    position: absolute; /* Changed from fixed for positioning relative to elements */
+    z-index: 1002;
+    border: 2px solid var(--primary-color);
+}
+
+.onboarding-popover::after, .onboarding-popover::before {
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-width: 10px;
+    width: 0;
+    height: 0;
+}
+
+.onboarding-popover.bottom::after {
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-color: transparent transparent var(--card-bg) transparent;
+}
+
+.onboarding-popover.bottom::before {
+    top: -23px; /* Position border behind the main arrow */
+    left: 50%;
+    transform: translateX(-50%);
+    border-color: transparent transparent var(--primary-color) transparent;
+}
+
+.onboarding-popover.top::after {
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-color: var(--card-bg) transparent transparent transparent;
+}
+
+.onboarding-popover.top::before {
+    bottom: -23px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-color: var(--primary-color) transparent transparent transparent;
+}
+
+
+#onboarding-content h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+}
+
+.onboarding-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.onboarding-actions button {
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    background-color: var(--primary-color);
+    color: white;
+    transition: background-color 0.2s ease;
+}
+
+.onboarding-actions button:hover {
+    background-color: var(--primary-hover-color);
+}
+
+.onboarding-highlight {
+    position: relative;
+    z-index: 1001; /* Just below the popover */
+    box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.6);
+    border-radius: 8px;
+}
+
+.student-info-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+.student-info-card p {
+    margin: 0;
+    font-size: 16px;
+    color: var(--text-color);
+}
+
+.student-info-card strong {
+    color: var(--primary-color);
+}
+
+.logout-button {
+    padding: 8px 15px;
+    background-color: var(--danger-color);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.logout-button:hover {
+    background-color: #e74c3c; /* A slightly darker red */
+}
+
+.credits-section {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--medium-gray);
+    color: var(--dark-gray);
+    font-size: 14px;
+}
+
+.credits-section p {
+    margin: 5px 0;
+}
+
+.credits-section a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.credits-section a:hover {
+    text-decoration: underline;
+}
+
+.demo-message {
+    margin-top: 20px;
+    font-style: italic;
+    color: var(--text-color);
+}
