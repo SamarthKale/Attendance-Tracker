@@ -3,7 +3,13 @@
 It provides a lightweight UI for adding subjects, tracking attended/total hours, and saving per-user CSV data to a local folder.
 
 ---
+## 🔗 Connect with Us
 
+Show us some love by starring the repository on GitHub and connecting with us on LinkedIn!
+
+- **Abhinaya Gowda**: [GitHub](https://github.com/AbhinayaGowda) | [LinkedIn](https://linkedin.com/in/abhinaya-gowda)
+- **Samarth Kale**: [GitHub](https://github.com/SamarthKale) | [LinkedIn](https://linkedin.com/in/samarth-n-kale)
+- 
 ## 📦 Download
 
 You can download the latest **Windows EXE installer** from Google Drive:
